@@ -29,6 +29,21 @@
 
         // Part Four (Bonus): Implement an interface IItemManager and make ItemManager implement it.
         // TODO: Implement this part four.
+        Console.WriteLine("Welcome to the new Item Manager!");
+
+        IItemManager newManager = new ItemManager();
+        newManager.AddItem("Apple");
+        newManager.AddItem("Banana");
+        newManager.PrintAllItems();
+        newManager.RemoveItem("Apple");
+
+        Console.WriteLine();
+        IItemManager<Fruit> newFruitManager = new ItemManager<Fruit>();
+        Console.WriteLine("Fruits:");
+        newFruitManager.AddItem(new Fruit("Mango"));
+        newFruitManager.AddItem(new Fruit("Orange"));
+        newFruitManager.AddItem(new Fruit("Pineapple"));
+        newFruitManager.PrintAllItems();
     }
 }
 
