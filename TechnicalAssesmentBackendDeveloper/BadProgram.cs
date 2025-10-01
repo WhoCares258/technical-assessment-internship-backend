@@ -2,14 +2,14 @@
 
 class Booking
 {
-    public string GuestName = string.Empty;
-    public string RoomNumber = string.Empty;
-    public DateTime CheckInDate;
-    public DateTime CheckOutDate;
-    public int TotalDays;
-    public double RatePerDay;
-    public double Discount;
-    public double TotalAmount;
+    public string GuestName { get; set; } = string.Empty;
+    public string RoomNumber { get; set; } = string.Empty;
+    public DateTime CheckInDate { get; set; }
+    public DateTime CheckOutDate { get; set; }
+    public int TotalDays { get; set; }
+    public double RatePerDay { get; set; }
+    public double Discount { get; set; }
+    public double TotalAmount { get; set; }
 
     public async Task BookRoom(string name, string room, DateTime checkin, DateTime checkout, double rate, double discountRate)
     {
