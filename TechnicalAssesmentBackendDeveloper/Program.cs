@@ -29,6 +29,7 @@
 
         // Part Four (Bonus): Implement an interface IItemManager and make ItemManager implement it.
         // TODO: Implement this part four.
+        Console.WriteLine();
         Console.WriteLine("Welcome to the new Item Manager!");
 
         IItemManager newManager = new ItemManager();
