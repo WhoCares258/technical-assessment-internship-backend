@@ -19,6 +19,7 @@
         // Part Three: Introduce a Fruit class and use the ItemManager<Fruit> to add a few fruits and print them on the console.
         // TODO: Implement this part three.
         Console.WriteLine();
+
         ItemManager<Fruit> fruitManager = new ItemManager<Fruit>();
         Console.WriteLine("Fruits:");
         fruitManager.AddItem(new Fruit("Mango"));
@@ -31,7 +32,22 @@
     }
 }
 
-public class ItemManager
+public interface IItemManager
+{
+    void AddItem(string item);
+    void PrintAllItems();
+    void RemoveItem(string item);
+    void ClearAllItems();
+}
+
+public interface IItemManager<T>
+{
+    void AddItem(T item);
+    void PrintAllItems();
+    void ClearAllItems();
+}
+
+public class ItemManager : IItemManager
 {
     private List<string> items = new List<string>();
 
@@ -61,7 +77,7 @@ public class ItemManager
     }
 }
 
-public class ItemManager<T>
+public class ItemManager<T> : IItemManager<T>
 {
     private List<T> items = new List<T>();
 
